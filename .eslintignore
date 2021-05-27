@@ -1,0 +1,10 @@
+/node_modules
+/public
+/storage
+/vendor
+/app
+/bootstrap
+/config
+/database
+/routes
+/tests
