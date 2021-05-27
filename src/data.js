@@ -9,8 +9,8 @@ export default {
       name: 'Educations',
       data: [
         {
-          from: 2011,
-          to: 2016,
+          from: 2000,
+          to: 2004,
           name: 'Bachelor of Computer Science',
           description: 'Institute of Technology',
           details: [
@@ -19,8 +19,8 @@ export default {
           ],
         },
         {
-          from: 2007 ,
-          to: 2010,
+          from: 2000 ,
+          to: 1997,
           name: 'Senior High School',
           description: 'National High School',
           details: [
