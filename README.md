@@ -3,7 +3,8 @@
 Curriculum vitae template using Vue.js 3 and Tailwind CSS 2.
 Visit [demo on Netlify](https://sad-sammet-756727.netlify.app/).
 
-![image](https://user-images.githubusercontent.com/2200129/119762724-6f08e780-bed8-11eb-89cf-c1d1293d8b56.png)
+<img width="781" alt="image" src="https://user-images.githubusercontent.com/2200129/223925980-ac332a8b-267e-4e98-9ace-9703f5c2d04b.png">
+
 
 ## Usage
 
