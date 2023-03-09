@@ -1,6 +1,7 @@
 <script setup>
 import SectionTitle from './components/SectionTitle.vue'
 import ExperienceItems from './components/ExperienceItems.vue'
+import WorkExperiences from "./components/WorkExperiences.vue";
 import data from './data.js'
 
 const name = data.name
@@ -9,12 +10,7 @@ const address = data.address
 const phone = data.phone
 const email = data.email
 const sections = data.sections
-const educations = data.educations
 const workExperiences = data.workExperiences
-const softwareProjects = data.softwareProjects
-const computerSkills = data.computerSkills
-const languages = data.languages
-const researchInterest = data.researchInterest
 
 </script>
 
@@ -34,6 +30,10 @@ const researchInterest = data.researchInterest
       <img
         :src="photo"
         class="w-44 ring-1 ring-gray-300 ring-offset-1 mr-2">
+    </div>
+    <div>
+      <SectionTitle>Work Experiences</SectionTitle>
+      <WorkExperiences :items="workExperiences" />
     </div>
     <div v-for="section in sections">
       <SectionTitle>{{ section.name }}</SectionTitle>

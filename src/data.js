@@ -4,32 +4,33 @@ export default {
     address: 'Address Street, City',
     phone: '+62876543210',
     email: 'james.smith@example.com',
-    sections: [
+    workExperiences: [
         {
-            name: 'Work Experiences',
-            data: [
-                {
-                    from: 2020,
-                    to: 2023,
-                    name: 'Senior Software Engineer',
-                    description: 'Google',
-                    details: [
-                        'Streamlined and automated deployment process for a complex multi-instance web application, resulting in reduced deployment time and improved stability.',
-                        'Continuously stayed up-to-date with emerging technologies and industry trends, proactively suggesting improvements to existing systems and processes to maintain a competitive edge.',
-                    ],
-                },
-                {
-                    from: 2018,
-                    to: 2020,
-                    name: 'Software Engineer',
-                    description: 'Facebook',
-                    details: [
-                        'Automated multi-instance web app deployment, reducing deployment time and improving stability.',
-                        'Kept up-to-date with emerging technologies and trends, proposing system and process improvements to maintain competitiveness.',
-                    ],
-                },
+            name: 'Senior Software Engineer',
+            company: 'Google',
+            employmentType: 'Full-time',
+            from: 'Aug 2020',
+            to: 'Present',
+            // duration: '2 yrs 3 mos',
+            details: [
+                'Streamlined and automated deployment process for a complex multi-instance web application, resulting in reduced deployment time and improved stability.',
+                'Continuously stayed up-to-date with emerging technologies and industry trends, proactively suggesting improvements to existing systems and processes to maintain a competitive edge.',
             ],
         },
+        {
+            name: 'Software Engineer',
+            company: 'Facebook',
+            employmentType: 'Contract',
+            from: 'Jul 2018',
+            to: 'Jul 2020',
+            duration: '2 yrs',
+            details: [
+                'Automated multi-instance web app deployment, reducing deployment time and improving stability.',
+                'Kept up-to-date with emerging technologies and trends, proposing system and process improvements to maintain competitiveness.',
+            ],
+        },
+    ],
+    sections: [
         {
             name: 'Software Projects',
             data: [
