@@ -32,8 +32,8 @@ const researchInterest = data.researchInterest
         </div>
       </div>
       <img
-        class="w-44 ring-2 ring-gray-500 ring-offset-4 mr-2"
-        :src="photo">
+        :src="photo"
+        class="w-44 ring-1 ring-gray-300 ring-offset-1 mr-2">
     </div>
     <div v-for="section in sections">
       <SectionTitle>{{ section.name }}</SectionTitle>
