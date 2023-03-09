@@ -1,6 +1,6 @@
 <script setup>
-import { defineProps, toRefs } from 'vue'
-import { ChevronRightIcon } from '@heroicons/vue/solid'
+import {defineProps} from 'vue'
+import {ChevronRightIcon} from '@heroicons/vue/solid'
 
 const props = defineProps({
   items: Array,
