@@ -1,6 +1,5 @@
 <script setup>
-import {defineProps} from 'vue'
-import {ChevronRightIcon} from '@heroicons/vue/solid'
+import {ChevronRightIcon} from '@heroicons/vue/24/solid'
 
 const props = defineProps({
   items: Array,
@@ -8,9 +7,11 @@ const props = defineProps({
 </script>
 <template>
   <div
-    v-for="item in props.items"
+    v-for="(item, i) in props.items"
+    :key="i"
     class="mt-5 flex flex-col text-sm"
-    style="page-break-inside: avoid;">
+    style="page-break-inside: avoid;"
+  >
     <div class="flex flex-col space-y-1">
       <div class="font-bold">
         {{ item.name }}
@@ -32,14 +33,17 @@ const props = defineProps({
       <div class="flex flex-col leading-relaxed">
         <template v-if="item.details">
           <div
-            v-for="detail in item.details"
-            class="flex flex-row items-start mt-1">
+            v-for="(detail, j) in item.details"
+            :key="j"
+            class="flex flex-row items-start mt-1"
+          >
             <ChevronRightIcon class="-ml-1 mt-0.5 mr-1 w-4 h-4 flex-shrink-0 text-blue-600" />
             <div>
               <a
                 v-if="detail.startsWith('http')"
                 :href="detail"
-                class="text-blue-500 underline">{{ detail }}</a>
+                class="text-blue-500 underline"
+              >{{ detail }}</a>
               <template v-else>
                 {{ detail }}
               </template>
