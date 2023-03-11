@@ -11,7 +11,7 @@ export default {
             employmentType: 'Full-time',
             from: 'Aug 2020',
             to: 'Present',
-            // duration: '2 yrs 3 mos',
+            duration: '',
             details: [
                 'Streamlined and automated deployment process for a complex multi-instance web application, resulting in reduced deployment time and improved stability.',
                 'Continuously stayed up-to-date with emerging technologies and industry trends, proactively suggesting improvements to existing systems and processes to maintain a competitive edge.',

@@ -6,10 +6,14 @@ const emit = defineEmits(['update:modelValue'])
 
 <template>
   <div>
-    <label
-      :for="paramCase(props.label)"
-      class="block text-sm font-medium leading-6 text-gray-900"
-    >{{ props.label }}</label>
+    <div class="flex flex-row">
+      <label
+        :for="paramCase(props.label)"
+        class="block text-sm font-medium leading-6 text-gray-900 mr-3"
+      >{{ props.label }}</label>
+      <slot name="extra" />
+    </div>
+
     <div class="mt-2">
       <textarea
         :id="paramCase(props.label)"
