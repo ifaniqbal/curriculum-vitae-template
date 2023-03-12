@@ -14,6 +14,7 @@ export const useCvStore = defineStore('cv', () => {
     })
     const sections = ref(data.sections)
     const workExperiences = ref(data.workExperiences)
+    const editMode = ref(false)
 
     const addSectionItem = (section) => {
         let item = {
@@ -48,5 +49,5 @@ export const useCvStore = defineStore('cv', () => {
         workExperiences.value = emptyData.workExperiences
     }
 
-    return {profile, sections, workExperiences, addSectionItem, empty: clear}
+    return {profile, sections, workExperiences, addSectionItem, empty: clear, editMode}
 })
