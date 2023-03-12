@@ -9,7 +9,7 @@ const cvStore = useCvStore()
 </script>
 
 <template>
-  <ContainerComponent>
+  <ContainerComponent v-if="!cvStore.editMode">
     <div class="flex justify-between items-center w-full">
       <div>
         <div class="text-6xl tracking-wide font-extrabold">
