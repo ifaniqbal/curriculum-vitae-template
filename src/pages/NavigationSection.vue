@@ -51,8 +51,8 @@ const importData = (event) => {
       cvStore.profile.address = data.profile.address
       cvStore.profile.phone = data.profile.phone
       cvStore.profile.email = data.profile.email
-      cvStore.sections.value = data.sections
-      cvStore.workExperiences.value = data.workExperiences
+      cvStore.sections = data.sections
+      cvStore.workExperiences = data.workExperiences
     }
   }
   reader.readAsText(file)
