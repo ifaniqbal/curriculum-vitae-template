@@ -285,7 +285,7 @@ const cvStore = useCvStore()
                     :label="'Description #'+(l+1)"
                   >
                     <template #extra>
-                      <div class="ml-3 flex flex-row space-x-1">
+                      <div class="flex flex-row space-x-1">
                         <UpButton
                           :disabled="l === 0"
                           @click="cvStore.moveUp(sectionItem.details, l)"

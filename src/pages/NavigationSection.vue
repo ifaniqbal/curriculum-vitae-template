@@ -68,47 +68,50 @@ const print = () => {
 <template>
   <NavBar>
     <FlexRow>
-      <PrimaryButton
-        v-if="!cvStore.editMode"
-        @click="cvStore.editMode=true"
-      >
-        Edit
-      </PrimaryButton>
-      <PrimaryButton
-        v-else
-        @click="cvStore.editMode=false"
-      >
-        Preview
-      </PrimaryButton>
-      <PrimaryButton
-        v-if="!cvStore.editMode"
-        @click="print()"
-      >
-        Print
-      </PrimaryButton>
-      <SecondaryButton
-        v-if="cvStore.editMode"
-        @click="cvStore.empty()"
-      >
-        Clear Form
-      </SecondaryButton>
-      <FlexCol class="border-l" />
-      <SecondaryButton
-        @click="exportData()"
-      >
-        Save JSON
-      </SecondaryButton>
-      <SecondaryButton
-        @click="chooseImportFile()"
-      >
-        Load JSON
-      </SecondaryButton>
-      <input
-        ref="importFile"
-        type="file"
-        class="hidden"
-        @change="importData"
-      >
+      <FlexRow>
+        <PrimaryButton
+          v-if="!cvStore.editMode"
+          @click="cvStore.editMode=true"
+        >
+          Edit
+        </PrimaryButton>
+        <PrimaryButton
+          v-else
+          @click="cvStore.editMode=false"
+        >
+          Preview
+        </PrimaryButton>
+        <PrimaryButton
+          v-if="!cvStore.editMode"
+          @click="print()"
+        >
+          Print
+        </PrimaryButton>
+        <SecondaryButton
+          v-if="cvStore.editMode"
+          @click="cvStore.empty()"
+        >
+          Clear Form
+        </SecondaryButton>
+      </FlexRow>
+      <FlexRow class="border-l pl-4">
+        <SecondaryButton
+          @click="exportData()"
+        >
+          Save JSON
+        </SecondaryButton>
+        <SecondaryButton
+          @click="chooseImportFile()"
+        >
+          Load JSON
+        </SecondaryButton>
+        <input
+          ref="importFile"
+          type="file"
+          class="hidden"
+          @change="importData"
+        >
+      </FlexRow>
     </FlexRow>
   </NavBar>
 </template>
