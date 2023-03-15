@@ -7,9 +7,11 @@ import FlexCol from '../components/FlexCol.vue';
 import FlexRow from '../components/FlexRow.vue';
 import AddButton from '../components/AddButton.vue';
 import {useCvStore} from '../stores/cv';
-import RemoveButton from './RemoveButton.vue';
 import PhotoPicker from '../components/PhotoPicker.vue';
 import {TransitionRoot} from '@headlessui/vue'
+import UpButton from '../components/UpButton.vue';
+import DownButton from '../components/DownButton.vue';
+import RemoveCircleButton from '../components/RemoveCircleButton.vue';
 
 const cvStore = useCvStore()
 </script>
@@ -89,7 +91,19 @@ const cvStore = useCvStore()
               <div class="font-semibold text-sm text-gray-500">
                 Work Experience #{{ i+1 }}
               </div>
-              <RemoveButton @click="cvStore.workExperiences.splice(i, 1)" />
+              <div class="ml-3 flex flex-row space-x-1">
+                <UpButton
+                  :disabled="i === 0"
+                  @click="cvStore.moveUp(cvStore.workExperiences, i)"
+                />
+                <DownButton
+                  :disabled="i === cvStore.workExperiences.length-1"
+                  @click="cvStore.moveDown(cvStore.workExperiences, i)"
+                />
+                <RemoveCircleButton
+                  @click="cvStore.workExperiences.splice(i, 1)"
+                />
+              </div>
             </FlexRow>
             <FlexCol class="ml-6 border-l-4 border-gray-200 pl-3">
               <FlexRow>
@@ -138,7 +152,17 @@ const cvStore = useCvStore()
                   :label="'Job Description #'+(j+1)"
                 >
                   <template #extra>
-                    <RemoveButton @click="item.details.splice(j, 1)" />
+                    <div class="flex flex-row space-x-1">
+                      <UpButton
+                        :disabled="j === 0"
+                        @click="cvStore.moveUp(item.details, j)"
+                      />
+                      <DownButton
+                        :disabled="j === item.details.length-1"
+                        @click="cvStore.moveDown(item.details, j)"
+                      />
+                      <RemoveCircleButton @click="item.details.splice(j, 1)" />
+                    </div>
                   </template>
                 </LongText>
               </FlexRow>
@@ -187,10 +211,19 @@ const cvStore = useCvStore()
               :label="'Section #'+(j+1)"
             >
               <template #extra>
-                <RemoveButton
-                  class="ml-3"
-                  @click="cvStore.sections.splice(j, 1)"
-                />
+                <div class="ml-3 flex flex-row space-x-1">
+                  <UpButton
+                    :disabled="j === 0"
+                    @click="cvStore.moveUp(cvStore.sections, j)"
+                  />
+                  <DownButton
+                    :disabled="j === cvStore.sections.length-1"
+                    @click="cvStore.moveDown(cvStore.sections, j)"
+                  />
+                  <RemoveCircleButton
+                    @click="cvStore.sections.splice(j, 1)"
+                  />
+                </div>
               </template>
             </ShortText>
           </FlexRow>
@@ -205,10 +238,19 @@ const cvStore = useCvStore()
               />
               <FlexRow class="font-extrabold text-sm text-gray-500">
                 {{ section.name }} #{{ k+1 }}
-                <RemoveButton
-                  class="ml-3"
-                  @click="section.data.splice(k, 1)"
-                />
+                <div class="ml-3 flex flex-row space-x-1">
+                  <UpButton
+                    :disabled="k === 0"
+                    @click="cvStore.moveUp(section.data, k)"
+                  />
+                  <DownButton
+                    :disabled="k === section.data.length-1"
+                    @click="cvStore.moveDown(section.data, k)"
+                  />
+                  <RemoveCircleButton
+                    @click="section.data.splice(k, 1)"
+                  />
+                </div>
               </FlexRow>
               <FlexCol class="ml-6 border-l-8 border-gray-200 pl-3">
                 <FlexRow>
@@ -243,9 +285,19 @@ const cvStore = useCvStore()
                     :label="'Description #'+(l+1)"
                   >
                     <template #extra>
-                      <RemoveButton
-                        @click="sectionItem.details.splice(l, 1)"
-                      />
+                      <div class="ml-3 flex flex-row space-x-1">
+                        <UpButton
+                          :disabled="l === 0"
+                          @click="cvStore.moveUp(sectionItem.details, l)"
+                        />
+                        <DownButton
+                          :disabled="l === sectionItem.details.length-1"
+                          @click="cvStore.moveDown(sectionItem.details, l)"
+                        />
+                        <RemoveCircleButton
+                          @click="sectionItem.details.splice(l, 1)"
+                        />
+                      </div>
                     </template>
                   </LongText>
                 </FlexRow>

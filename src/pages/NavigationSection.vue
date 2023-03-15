@@ -22,7 +22,7 @@ const formatDate = (date) => {
 
 const exportData = () => {
   const {profile, sections, workExperiences} = cvStore
-  const data = {profile, sections, workExperiences}
+  const data = {profile, workExperiences, sections}
   const jsonString = JSON.stringify(data, null, 2)
   const blob = new Blob([jsonString], {type:'application/json'})
   const url = URL.createObjectURL(blob)

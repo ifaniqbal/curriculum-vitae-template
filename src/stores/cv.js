@@ -27,7 +27,7 @@ export const useCvStore = defineStore('cv', () => {
         if (section.data.length > 0) {
             item = Object.assign({}, section.data[0])
             for (const prop in item) {
-                if (typeof item[prop] === 'object' && item[prop].length !== 0){
+                if (typeof item[prop] === 'object' && item[prop].length !== 0) {
                     item[prop] = []
                 } else {
                     item[prop] = ''
@@ -49,5 +49,32 @@ export const useCvStore = defineStore('cv', () => {
         workExperiences.value = emptyData.workExperiences
     }
 
-    return {profile, sections, workExperiences, addSectionItem, empty: clear, editMode}
+    const moveUp = (list, index) => {
+        if (index <= 0 || list.length <= 1) {
+            return;
+        }
+
+        const temp = list.splice(index, 1)[0];
+        list.splice(index - 1, 0, temp);
+    }
+
+    const moveDown = (list, index) => {
+        if (index >= list.length - 1 || list.length <= 1) {
+            return;
+        }
+
+        const temp = list.splice(index, 1)[0];
+        list.splice(index + 1, 0, temp);
+    }
+
+    return {
+        profile,
+        sections,
+        workExperiences,
+        addSectionItem,
+        empty: clear,
+        editMode,
+        moveUp,
+        moveDown
+    }
 })
