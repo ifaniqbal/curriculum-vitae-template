@@ -35,12 +35,12 @@ const props = defineProps({
             :key="j"
             class="flex flex-row items-start mt-1"
           >
-            <ChevronRightIcon class="-ml-1 mt-0.5 mr-1 w-4 h-4 flex-shrink-0 text-blue-600" />
+            <ChevronRightIcon class="-ml-1 mt-0.5 mr-1 w-4 h-4 flex-shrink-0 text-slate-600" />
             <div>
               <a
                 v-if="detail.startsWith('http')"
                 :href="detail"
-                class="text-blue-500 underline"
+                class="text-slate-500 underline"
               >{{ detail }}</a>
               <template v-else>
                 {{ detail }}

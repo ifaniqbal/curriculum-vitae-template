@@ -2,6 +2,7 @@
 import ContainerComponent from '../components/ContainerComponent.vue';
 import FormSection from '../components/FormSection.vue';
 import ShortText from '../components/ShortText.vue';
+import ShortCompactText from '../components/ShortCompactText.vue';
 import LongText from '../components/LongText.vue';
 import FlexCol from '../components/FlexCol.vue';
 import FlexRow from '../components/FlexRow.vue';
@@ -31,11 +32,10 @@ const cvStore = useCvStore()
         <FlexRow>
           <FormSection
             title="Profile"
-            description="Basic personal information."
           />
         </FlexRow>
         <FlexRow>
-          <ShortText
+          <ShortCompactText
             v-model="cvStore.profile.name"
             class="w-full"
             label="Name"
@@ -50,21 +50,21 @@ const cvStore = useCvStore()
           />
         </FlexRow>
         <FlexRow>
-          <ShortText
+          <ShortCompactText
             v-model="cvStore.profile.address"
             class="w-full"
             label="Address"
           />
         </FlexRow>
         <FlexRow>
-          <ShortText
+          <ShortCompactText
             v-model="cvStore.profile.phone"
             class="w-full"
             label="Phone"
           />
         </FlexRow>
         <FlexRow>
-          <ShortText
+          <ShortCompactText
             v-model="cvStore.profile.email"
             class="w-full"
             label="E-mail"
@@ -105,38 +105,38 @@ const cvStore = useCvStore()
                 />
               </div>
             </FlexRow>
-            <FlexCol class="ml-6 border-l-4 border-gray-200 pl-3">
+            <FlexCol class="ml-6 border-l border-gray-200 pl-3">
               <FlexRow>
-                <ShortText
+                <ShortCompactText
                   v-model="item.name"
                   class="w-full font-bold"
                   label="Position"
                 />
               </FlexRow>
               <FlexRow>
-                <ShortText
+                <ShortCompactText
                   v-model="item.company"
                   class="w-1/2 font-bold"
                   label="Company"
                 />
-                <ShortText
+                <ShortCompactText
                   v-model="item.employmentType"
                   class="w-1/2"
                   label="Employment Type"
                 />
               </FlexRow>
               <FlexRow>
-                <ShortText
+                <ShortCompactText
                   v-model="item.from"
                   class="w-1/3"
                   label="From"
                 />
-                <ShortText
+                <ShortCompactText
                   v-model="item.to"
                   class="w-1/3"
                   label="To"
                 />
-                <ShortText
+                <ShortCompactText
                   v-model="item.duration"
                   class="w-1/3"
                   label="Duration"
@@ -252,24 +252,24 @@ const cvStore = useCvStore()
                   />
                 </div>
               </FlexRow>
-              <FlexCol class="ml-6 border-l-8 border-gray-200 pl-3">
+              <FlexCol class="ml-6 border-l border-gray-200 pl-3">
                 <FlexRow>
-                  <ShortText
+                  <ShortCompactText
                     v-model="sectionItem.from"
                     class="w-1/6"
                     label="From"
                   />
-                  <ShortText
+                  <ShortCompactText
                     v-model="sectionItem.to"
                     class="w-1/6"
                     label="To"
                   />
-                  <ShortText
+                  <ShortCompactText
                     v-model="sectionItem.name"
                     class="w-2/6 font-bold"
                     label="Name"
                   />
-                  <ShortText
+                  <ShortCompactText
                     v-model="sectionItem.description"
                     class="w-2/6 font-bold"
                     label="Description"
