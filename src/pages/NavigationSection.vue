@@ -81,6 +81,7 @@ const print = () => {
         Preview
       </PrimaryButton>
       <PrimaryButton
+        v-if="!cvStore.editMode"
         @click="print()"
       >
         Print
@@ -89,18 +90,18 @@ const print = () => {
         v-if="cvStore.editMode"
         @click="cvStore.empty()"
       >
-        Clear
+        Clear Form
       </SecondaryButton>
       <FlexCol class="border-l" />
       <SecondaryButton
         @click="exportData()"
       >
-        Export
+        Save JSON
       </SecondaryButton>
       <SecondaryButton
         @click="chooseImportFile()"
       >
-        Import
+        Load JSON
       </SecondaryButton>
       <input
         ref="importFile"
